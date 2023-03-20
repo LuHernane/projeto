@@ -1,8 +1,8 @@
-import { Box, Button, Stack } from "@chakra-ui/react";
+import { Box, Button, Input, Stack } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/toast";
 import { useState } from "react";
 
-export default function Home() {
+export default function LoguinPage() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const userId = "redmi";
@@ -10,7 +10,7 @@ export default function Home() {
   const toast = useToast();
 
   function Loguin() {
-    if (userId === "redmi" && passwordId === "note8") {
+    if (user === userId && password === passwordId) {
       <a href=""></a>;
     } else {
       toast({
@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <Box
-      bg="blue.200"
+      bg="blackAlpha.700"
       w="100%"
       h="100%"
       pos="fixed"
@@ -42,9 +42,22 @@ export default function Home() {
         borderRadius={15}
         spacing={4}
       >
-        <input size={30} width="auto" />
-        <input type="password" size={30} width="auto" />
-        <Button> Entrar</Button>
+        <Input
+          placeholder="User"
+          width="auto"
+          size={"lg"}
+          onChange={(e) => setUser(e.target.value)}
+        />
+        <Input
+          placeholder="Password"
+          type="password"
+          size={"lg"}
+          width="auto"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button colorScheme="whatsapp" onClick={Loguin}>
+          Entrar
+        </Button>
       </Stack>
     </Box>
   );
