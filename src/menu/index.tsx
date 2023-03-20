@@ -24,7 +24,7 @@ export default function Menu() {
 
   return (
     <>
-      <Button onClick={onOpen}>
+      <Button bg="gray" onClick={onOpen}>
         <Icon as={HamburgerIcon} />
       </Button>
 

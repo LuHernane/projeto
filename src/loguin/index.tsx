@@ -11,7 +11,7 @@ export default function LoguinPage() {
 
   function Loguin() {
     if (user === userId && password === passwordId) {
-      <a href=""></a>;
+      location.href = "/main";
     } else {
       toast({
         position: "top",
@@ -47,6 +47,7 @@ export default function LoguinPage() {
           width="auto"
           size={"lg"}
           onChange={(e) => setUser(e.target.value)}
+          value={user}
         />
         <Input
           placeholder="Password"
@@ -54,6 +55,7 @@ export default function LoguinPage() {
           size={"lg"}
           width="auto"
           onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
         <Button colorScheme="whatsapp" onClick={Loguin}>
           Entrar
