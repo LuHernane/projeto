@@ -10,7 +10,7 @@ import Menu from "../../src/menu";
 
 export default function NavBar() {
   return (
-    <Box bg="gray" display={"flex"} flex={"1"} h={38}>
+    <Box bg="gray" display={"flex"} flex={"1"} h={38} boxShadow="md">
       <Menu />
       <HStack
         justifySelf={"center"}
