@@ -34,7 +34,7 @@ export default function Body() {
           />
           <Box>
             <Heading size="sm">TESTE</Heading>
-            <Text> aahhh ehhhhh</Text>
+            <Text> um teste</Text>
           </Box>
         </Flex>
       </CardHeader>
