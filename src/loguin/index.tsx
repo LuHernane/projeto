@@ -13,6 +13,8 @@ export default function LoguinPage() {
     if (user === userId && password === passwordId) {
       location.href = "/main";
     } else {
+      setPassword("");
+      setUser("");
       toast({
         position: "top",
         title: "error of login",
