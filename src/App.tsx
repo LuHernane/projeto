@@ -4,6 +4,7 @@ import Body from "./body";
 import Home from "./Home";
 import LoguinPage from "./loguin";
 import Menu from "./menu";
+import Reps from "./repeticao";
 
 export default function App(): JSX.Element {
   return (
@@ -13,6 +14,7 @@ export default function App(): JSX.Element {
       <Route path="/menu" element={<Menu />} />
       <Route path="/nav" element={<NavBar />} />
       <Route path="/body" element={<Body />} />
+      <Route path="/repeticao" element={<Reps />} />
     </Routes>
   );
 }
