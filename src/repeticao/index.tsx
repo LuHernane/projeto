@@ -77,12 +77,24 @@ export default function Reps() {
   function novoProduto() {
     const find = produto?.find((item) => item.id === idProduct);
     if (find) {
-      return alert("Product or ID always exists!");
+      return alert("ID alreay exists!");
     }
-
     if (!productName || !quantidadeProduct || !idProduct) {
       return;
     }
+    const findName = produto?.find((item) => item.produto === productName);
+    if (findName) {
+      const updatedItens = produto.map((item) => {
+        if (item.id === findName.id) {
+          const newQuantity = item.quantidade + quantidadeProduct;
+          return { ...item, quantidade: newQuantity };
+        }
+        return item;
+      });
+      setProduto(updatedItens);
+      return;
+    }
+
     setProduto((old) => [
       ...old,
       {
@@ -92,11 +104,16 @@ export default function Reps() {
       },
     ]);
   }
+
   return (
     <Box flex="1" bg="gray.400" h="container.lg">
       <Stack direction="row" spacing={4} align="center">
-        <Button onClick={adiciona}>Entrada</Button>
-        <Button onClick={saida}>Saída</Button>
+        <Button type="submit" onClick={adiciona}>
+          Entrada
+        </Button>
+        <Button type="submit" onClick={saida}>
+          Saída
+        </Button>
 
         <Input
           placeholder="ID"
