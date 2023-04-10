@@ -1,8 +1,8 @@
 import {
   Box,
   Button,
+  HStack,
   Input,
-  Stack,
   Table,
   TableContainer,
   Tbody,
@@ -107,7 +107,7 @@ export default function Reps() {
 
   return (
     <Box flex="1" bg="gray.400" h="container.lg">
-      <Stack direction="row" spacing={4} align="center">
+      <HStack direction="row" spacing={4} align="center">
         <Button type="submit" onClick={adiciona}>
           Entrada
         </Button>
@@ -127,7 +127,7 @@ export default function Reps() {
           width="auto"
           onBlur={(e) => setQuantidade(+e.target.value)}
         />
-      </Stack>
+      </HStack>
       <VStack align={"center"} p="10%">
         <TableContainer>
           <Table>
